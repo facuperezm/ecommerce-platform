@@ -4,9 +4,9 @@ import Footer from "./Footer";
 export default function Layout({ children }) {
   return (
     <>
-      <Header></Header>
+      <Header />
       {children}
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }
