@@ -1,6 +1,6 @@
 import React from "react";
 export default function ItemCart(props) {
-  const { title, price, image, id, quantity } = props;
+  const { title, price, image, id, quantity, deleteItem } = props;
   const handleBorrar = () => {
     props.deleteItem(id);
   };

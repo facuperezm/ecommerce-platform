@@ -2,14 +2,21 @@ export const ACTIONS = {
   GETPRODUCTS: "GETPRODUCTS",
   ADDTOCART: "ADDTOCART",
   DELETEITEM: "DELETEITEM",
+  CLEARCART: "CLEARCART",
 };
 
+const cartInitialState = {
+  products: [],
+  cart: [],
+};
+import { toast } from "react-toastify";
 const Reducer = (state, action) => {
   switch (action.type) {
-    case ACTIONS.GETPRODUCTS:
+    case ACTIONS.GETPRODUCTS: {
       return { ...state, products: action.payload };
-      console.log(action.payload, "este es el payload");
+    }
     case ACTIONS.ADDTOCART: {
+      toast.success("MY SUCCESS");
       let newItem = state.products.find(
         (product) => product.id === action.payload
       );
@@ -37,6 +44,12 @@ const Reducer = (state, action) => {
         ...state,
         cart: state.cart.filter((items) => items[0].id !== action.payload),
       };
+    case ACTIONS.CLEARCART: {
+      return {
+        ...state,
+        cart: cartInitialState.cart,
+      };
+    }
     default:
       throw new Error(`unknown action ${action.type}`);
   }

@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { toast } from "react-toastify";
+import Product from "../containers/Product";
 import ProductContext from "../context/Context";
 
 const Item = ({ title, price, description, image, id }) => {

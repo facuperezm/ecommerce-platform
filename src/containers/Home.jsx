@@ -10,7 +10,7 @@ const Home = () => {
   const { getProducts, products } = useContext(ProductContext);
 
   return (
-    <div className="bg-gray-200 grid grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))] gap-3">
+    <div className="px-4 bg-gray-200 grid grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))] gap-3">
       {products.map((item) => (
         <Item {...item} key={item.id}></Item>
       ))}
