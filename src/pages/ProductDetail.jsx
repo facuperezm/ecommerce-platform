@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Item from "../components/Item";
+import ItemDetail from "../components/ItemDetail";
 
 const ProductDetail = () => {
   return (
-    <div className="bg-white py-5 pt-20 pb-10">
-      <Item />
+    <div className="bg-[#ededed] py-5 pt-10 pb-10">
+      <ItemDetail />
     </div>
   );
 };

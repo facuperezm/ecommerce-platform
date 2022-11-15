@@ -26,6 +26,9 @@ export default function UseProductContext({ children }) {
       dispatch({ type: "DELETEALL", payload: item });
     }
   };
+  const addOne = (item) => {
+    dispatch({ type: "ADDONE", payload: item });
+  };
   const clearAll = () => {
     dispatch({ type: "CLEARCART" });
   };
@@ -39,6 +42,7 @@ export default function UseProductContext({ children }) {
         getProducts,
         addToCart,
         deleteItem,
+        addOne,
         clearAll,
       }}
     >
