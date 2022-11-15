@@ -9,20 +9,21 @@ export default function UseProductContext({ children }) {
     cart: [],
   };
   const [state, dispatch] = useReducer(Reducer, initialState);
+
   const getProducts = async () => {
     const res = await axios.get("https://fakestoreapi.com/products/");
     dispatch({ type: "GETPRODUCTS", payload: res.data });
   };
+
   const addToCart = (item) => {
     dispatch({ type: "ADDTOCART", payload: item });
   };
+
   const deleteItem = (item, all = true) => {
-    console.log(item, all)
     if (all) {
       dispatch({ type: "DELETEITEM", payload: item });
     } else {
       dispatch({ type: "DELETEALL", payload: item });
-      
     }
   };
   const clearAll = () => {

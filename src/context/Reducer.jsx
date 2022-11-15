@@ -36,12 +36,9 @@ const Reducer = (state, action) => {
     }
 
     case ACTIONS.DELETEITEM: {
-      const newItem = action.payload
       let itemToDelete = state.cart.find(
-        (item) => item.id === newItem
+        (item) => item.id === action.payload
       );
-      // const itemToDelete = state.list.find(item => item.id === newItem.id)
-      // console.log(itemToDelete, itemToDelete.quantity)
       return itemToDelete.quantity > 1 ?
       {
         ...state,
