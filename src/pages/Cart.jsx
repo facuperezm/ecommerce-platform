@@ -3,10 +3,7 @@ import ItemCart from "../components/ItemCart";
 import ProductContext from "../context/Context";
 
 const Cart = () => {
-  const { cart, deleteItem, clearAll } = useContext(ProductContext);
-  // const clearCart = () => {
-  //   dispatch({ type: TYPES.CLEARCART });
-  // };
+  const { cart, deleteItem, clearAll, deleteAll } = useContext(ProductContext);
 
   return (
     <>

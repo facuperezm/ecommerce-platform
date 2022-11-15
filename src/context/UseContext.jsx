@@ -16,8 +16,14 @@ export default function UseProductContext({ children }) {
   const addToCart = (item) => {
     dispatch({ type: "ADDTOCART", payload: item });
   };
-  const deleteItem = (item) => {
-    dispatch({ type: "DELETEITEM", payload: item });
+  const deleteItem = (item, all = true) => {
+    console.log(item, all)
+    if (all) {
+      dispatch({ type: "DELETEITEM", payload: item });
+    } else {
+      dispatch({ type: "DELETEALL", payload: item });
+      
+    }
   };
   const clearAll = () => {
     dispatch({ type: "CLEARCART" });

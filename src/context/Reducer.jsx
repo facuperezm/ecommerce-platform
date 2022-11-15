@@ -3,20 +3,22 @@ export const ACTIONS = {
   ADDTOCART: "ADDTOCART",
   DELETEITEM: "DELETEITEM",
   CLEARCART: "CLEARCART",
+  DELETEALL: "DELETEALL"
 };
 
 const cartInitialState = {
   products: [],
   cart: [],
 };
-import { toast } from "react-toastify";
+
 const Reducer = (state, action) => {
   switch (action.type) {
+  
     case ACTIONS.GETPRODUCTS: {
       return { ...state, products: action.payload };
     }
+    
     case ACTIONS.ADDTOCART: {
-      toast.success("MY SUCCESS");
       let newItem = state.products.find(
         (product) => product.id === action.payload
       );
@@ -32,18 +34,30 @@ const Reducer = (state, action) => {
           }
         : { ...state, cart: [...state.cart, { ...newItem, quantity: 1 }] };
     }
-    // return {
-    //   ...state,
-    //   cart: [
-    //     ...state.cart,
-    //     state.products.filter((ite) => ite.id == parseInt(action.payload)),
-    //   ],
-    // };
-    case ACTIONS.DELETEITEM:
+
+    case ACTIONS.DELETEITEM: {
+      const newItem = action.payload
+      let itemToDelete = state.cart.find(
+        (item) => item.id === newItem
+      );
+      // const itemToDelete = state.list.find(item => item.id === newItem.id)
+      // console.log(itemToDelete, itemToDelete.quantity)
+      return itemToDelete.quantity > 1 ?
+      {
+        ...state,
+        cart: state.cart.map(item => item.id === action.payload ? {...item, quantity: item.quantity - 1} : item)
+      } : {
+        ...state,
+        cart: state.cart.filter(item => item.id !== action.payload)
+      }
+    }
+    case ACTIONS.DELETEALL: {
       return {
         ...state,
-        cart: state.cart.filter((items) => items[0].id !== action.payload),
-      };
+        cart: state.cart.filter(item => item.id !== action.payload)
+      }
+
+    }
     case ACTIONS.CLEARCART: {
       return {
         ...state,
