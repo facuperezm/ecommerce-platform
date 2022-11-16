@@ -10,7 +10,7 @@ const ShowItem = ({ data }) => {
   }, []);
 
   return (
-    <div className="px-2 py-4 bg-[#eeeeee] grid grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))] gap-3">
+    <div className="px-6 xl:px-56 md:px-20 sm:px-10 py-4 bg-[#eeeeee] grid grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))] gap-8">
       {data.map((item, index) => (
         <Item key={index} data={item} />
       ))}

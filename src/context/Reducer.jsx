@@ -33,14 +33,14 @@ const Reducer = (state, action) => {
     }
 
     case ACTIONS.ADDTOCART: {
-      Toast.fire({
-        icon: "success",
-        title: "Product added to cart",
-      });
       let newItem = state.products.find(
         (product) => product.id === action.payload
       );
       let itemInCart = state.cart.find((item) => item.id === newItem.id);
+      Toast.fire({
+        icon: "success",
+        title: `${newItem.title} added to cart`,
+      });
       return itemInCart
         ? {
             ...state,

@@ -25,8 +25,8 @@ const Cart = () => {
   return (
     <>
       {cart.length !== 0 ? (
-        <div className="md:grid md:grid-cols-3 flex flex-col pt-8 h-96">
-          <div className="flex flex-col p-4  border-blue col-span-2 rounded-xl h-full">
+        <div className="md:grid md:grid-cols-3 flex flex-col pt-8">
+          <div className="flex flex-col p-4  border-blue col-span-2 rounded-xl overflow-scroll">
             {cart.map((item, i) => (
               <ItemCart
                 {...item}
@@ -41,10 +41,17 @@ const Cart = () => {
             <p className="text-2xl pt-2">Total ${totalPrice.toFixed(2)}</p>
             <button
               onClick={clearAll}
-              className="font-semibold border w-full py-3 bg-[#3483fa] hover:bg-[#2968c8] transition duration-400 text-white rounded-md z-5 mt-4"
+              className="font-semibold  w-full py-3 bg-[#3483fa] hover:bg-[#2968c8] transition duration-400 text-white rounded-md z-5 mt-4"
             >
               Clear cart
             </button>
+            <div className="mt-4">
+              <Link to="/" className="">
+                <button className="font-semibold w-full py-3 bg-[#e3edfb] hover:bg-[#e3edea] transition duration-400 text-[#3483fa] rounded-md z-5">
+                  Continue shopping
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       ) : (
