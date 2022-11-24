@@ -5,7 +5,7 @@ import Reducer from "./Reducer";
 
 const getLocalCart = () => {
   let localCart = localStorage.getItem("storecart");
-  if (localCart == []) {
+  if (localCart === []) {
     return [];
   } else {
     return JSON.parse(localCart);

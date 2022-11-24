@@ -24,7 +24,15 @@ const Home = () => {
     getProducts();
   }, []);
 
-  return <>{loading ? <LoadingProduct /> : <ShowItem data={data} />}</>;
+  return (
+    <div className="bg-[#eeeeee]">
+      <div className="grid">
+        <div className=" auto-rows-auto justify-center">
+          {loading ? <LoadingProduct /> : <ShowItem data={data} />}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Home;
