@@ -16,7 +16,6 @@ export default function UseProductContext({ children }) {
   const initialState = {
     cart: getLocalCart(),
     products: [],
-    // cart: [],
   };
   const [state, dispatch] = useReducer(Reducer, initialState);
 
