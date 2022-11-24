@@ -5,18 +5,18 @@ import Reducer from "./Reducer";
 
 const getLocalCart = () => {
   let localCart = localStorage.getItem("storecart");
-  if (localCart === []) {
-    return [];
-  } else {
+  if (localCart) {
     return JSON.parse(localCart);
+  } else {
+    return [];
   }
 };
 
 export default function UseProductContext({ children }) {
   const initialState = {
+    cart: getLocalCart(),
     products: [],
     // cart: [],
-    cart: getLocalCart(),
   };
   const [state, dispatch] = useReducer(Reducer, initialState);
 
