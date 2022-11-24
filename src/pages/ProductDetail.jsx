@@ -4,7 +4,7 @@ import ItemDetail from "../components/ItemDetail";
 
 const ProductDetail = () => {
   return (
-    <div className="bg-[#ededed] py-5 pt-10 pb-10">
+    <div className="flex flex-col bg-[#ededed] py-5 pt-10 pb-10 h-full my-auto">
       <ItemDetail />
     </div>
   );

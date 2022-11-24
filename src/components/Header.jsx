@@ -18,7 +18,7 @@ const Header = () => {
   }, [cart]);
   return (
     <>
-      <nav className="flex flex-row items-center justify-between bg-[#fff159] w-full h-24 opacity-95">
+      <nav className="flex flex-row items-center justify-between bg-[#fff159] w-full py-5">
         <Link to="/">
           <h1 className="self-center text-2xl font-black whitespace-nowrap text-black px-10">
             e-Store

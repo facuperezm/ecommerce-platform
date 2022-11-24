@@ -23,10 +23,10 @@ const Cart = () => {
   }, [cart, totalPrice]);
 
   return (
-    <>
+    <div className="bg-white">
       {cart.length !== 0 ? (
-        <div className="md:grid md:grid-cols-3 flex flex-col pt-8">
-          <div className="flex flex-col p-4  border-blue col-span-2 rounded-xl overflow-scroll">
+        <div className="md:grid md:grid-cols-3 flex flex-col">
+          <div className="flex flex-col p-4 col-span-2 rounded-xl overflow-y-auto">
             {cart.map((item, i) => (
               <ItemCart
                 {...item}
@@ -36,7 +36,7 @@ const Cart = () => {
               />
             ))}
           </div>
-          <div className="col-start-3 p-4">
+          <div className="col-start-3 p-4 my-auto">
             <h1 className="font-semibold text-md">Cart ({totalItems})</h1>{" "}
             <p className="text-2xl pt-2">Total ${totalPrice.toFixed(2)}</p>
             <button
@@ -69,7 +69,7 @@ const Cart = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

@@ -8,12 +8,12 @@ const ShowProductItem = ({ data }) => {
   const { addToCart } = useContext(ProductContext);
 
   return (
-    <div className="bg-[#ededed] px-2">
-      <div className="grid grid-cols-1 sm:grid-cols-2 mx-auto max-w-3xl rounded-md justify-between bg-white">
+    <div className="px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 mx-auto max-w-3xl rounded-md justify-between bg-white p-2">
         <div className="overflow-hidden flex justify-center items-center px-4">
           <img src={image} alt={title} className="p-4 max-h-[80%]" />
         </div>
-        <div className="p-4 max-w-md border m-4 rounded-md flex flex-col justify-between">
+        <div className="p-4 max-w-md border mx-auto rounded-md flex flex-col justify-between">
           <div>
             <h4 className="capitalize text-gray-500 text-sm">
               {category} | Sold 344

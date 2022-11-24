@@ -21,7 +21,7 @@ const ItemDetail = () => {
   }, []);
 
   return (
-    <div className="bg-[#ededed]">
+    <div className="my-auto">
       {loading ? <LoadingDetail /> : <ShowProductItem data={product} />}
     </div>
   );

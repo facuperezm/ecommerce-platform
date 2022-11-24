@@ -1,14 +1,28 @@
 import axios from "axios";
 import ProductContext from "./Context";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import Reducer from "./Reducer";
+
+const getLocalCart = () => {
+  let localCart = localStorage.getItem("storecart");
+  if (localCart == []) {
+    return [];
+  } else {
+    return JSON.parse(localCart);
+  }
+};
 
 export default function UseProductContext({ children }) {
   const initialState = {
     products: [],
-    cart: [],
+    // cart: [],
+    cart: getLocalCart(),
   };
   const [state, dispatch] = useReducer(Reducer, initialState);
+
+  useEffect(() => {
+    localStorage.setItem("storecart", JSON.stringify(state.cart));
+  }, [state.cart]);
 
   const getProducts = async () => {
     const res = await axios.get("https://fakestoreapi.com/products/");
