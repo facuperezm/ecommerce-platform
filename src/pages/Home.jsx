@@ -25,12 +25,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-[#eeeeee]">
-      <div className="grid">
-        <div className=" auto-rows-auto justify-center">
-          {loading ? <LoadingProduct /> : <ShowItem data={data} />}
-        </div>
-      </div>
+    <div className="md:px-10 px-2 bg-[#eeeeee]">
+      {loading ? <LoadingProduct /> : <ShowItem data={data} />}
     </div>
   );
 };
