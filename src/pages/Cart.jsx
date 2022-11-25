@@ -23,10 +23,10 @@ const Cart = () => {
   }, [cart, totalPrice]);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white h-full">
       {cart.length !== 0 ? (
-        <div className="md:grid md:grid-cols-3 flex flex-col">
-          <div className="flex flex-col p-4 col-span-2 rounded-xl overflow-y-auto">
+        <div className="md:grid md:grid-cols-3 flex h-full flex-col ">
+          <div className="flex flex-col h-full p-4 col-span-2 rounded-xl overflow-y-auto">
             {cart.map((item, i) => (
               <ItemCart
                 {...item}

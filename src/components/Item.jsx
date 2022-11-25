@@ -8,7 +8,7 @@ const Item = ({ data }) => {
   const { addToCart } = useContext(ProductContext);
   return (
     <>
-      <article className="flex flex-col justify-between rounded rounded-md bg-white rounded-2xl px-2 transition duration-400 hover:shadow-xl">
+      <article className="flex flex-col max-w-xs justify-between rounded rounded-md bg-white rounded-2xl px-2 transition duration-400 hover:shadow-xl">
         <Link
           to={`/product/${id}`}
           className="group bg-white rounded-lg transition duration-200"
