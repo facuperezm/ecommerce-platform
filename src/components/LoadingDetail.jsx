@@ -3,23 +3,24 @@ import { Instagram } from "react-content-loader";
 
 const LoadingDetail = () => {
   return (
-    <div className="mx-auto h-96 grid">
-      <div className="border bg-gray-100 shadow rounded-md p-4 max-w-3xl w-full mx-auto">
-        <div className="animate-pulse flex space-x-4">
-          <div className="rounded-2xl bg-gray-200 h-96 w-1/2"></div>
-          <div className="flex flex-col flex-1 space-y-6 justify-between py-6">
-            <div className="space-y-3">
-              <div className="h-2 bg-gray-300 rounded"></div>
-              <div className="h-2 bg-gray-300 rounded"></div>
-              <div className="h-2 bg-gray-300 rounded"></div>
-              <div className="h-2 bg-gray-300 rounded"></div>
-              <div className="h-2 bg-gray-300 rounded"></div>
-              <div className="h-2 bg-gray-300 rounded"></div>
-              
-            </div>
-            <div className="space-y-2">
-              <div className="h-10 bg-gray-300 rounded"></div>
-              <div className="h-10 bg-gray-300 rounded"></div>
+    <div className="flex flex-col items-center justify-center h-full">
+      <div className="max-w-3xl w-full">
+        <div className="rounded-md bg-gray-100 shadow-lg p-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+            <div className="h-96 bg-gray-200 rounded-lg"></div>
+            <div className="flex flex-col space-y-4 justify-between py-6">
+              <div className="space-y-4">
+                <div className="h-4 bg-gray-300 rounded"></div>
+                <div className="h-4 bg-gray-300 rounded"></div>
+                <div className="h-4 bg-gray-300 rounded"></div>
+                <div className="h-4 bg-gray-300 rounded"></div>
+                <div className="h-4 bg-gray-300 rounded"></div>
+                <div className="h-4 bg-gray-300 rounded"></div>
+              </div>
+              <div className="space-y-2">
+                <div className="h-10 bg-gray-300 rounded"></div>
+                <div className="h-10 bg-gray-300 rounded"></div>
+              </div>
             </div>
           </div>
         </div>

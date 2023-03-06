@@ -16,26 +16,28 @@ const Header = () => {
 
     setTotalItems(items);
   }, [cart]);
+
   return (
-    <>
-      <nav className="flex flex-row items-center justify-between bg-[#fff159] w-full py-5">
-        <Link to="/">
-          <h1 className="self-center text-2xl font-black whitespace-nowrap text-black px-10">
-            e-Store
-          </h1>
+    <nav className="flex items-center justify-between bg-yellow-300 px-5 py-3">
+      <Link to="/">
+        <h1 className="text-2xl font-bold text-gray-800">e-Store</h1>
+      </Link>
+      <div className="flex items-center">
+        <Link
+          to="/"
+          className="mr-6 text-lg font-medium text-gray-800 hover:text-gray-900"
+        >
+          Products
         </Link>
-        <div className="flex items-center">
-          <Link to="/">
-            <h1 className="font-bold">Products</h1>
-          </Link>
-          <Link to="/Cart">
-            <h1 className="font-bold text px-10 flex items-center gap-2">
-              <BsCart2 /> Cart ({totalItems})
-            </h1>
-          </Link>
-        </div>
-      </nav>
-    </>
+        <Link
+          to="/Cart"
+          className="flex items-center text-lg font-medium text-gray-800 hover:text-gray-900"
+        >
+          <BsCart2 className="mr-2" />
+          Cart ({totalItems})
+        </Link>
+      </div>
+    </nav>
   );
 };
 

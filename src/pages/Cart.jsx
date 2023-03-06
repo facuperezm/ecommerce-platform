@@ -25,8 +25,8 @@ const Cart = () => {
   return (
     <div className="bg-white h-full">
       {cart.length !== 0 ? (
-        <div className="md:grid md:grid-cols-3 flex h-full flex-col ">
-          <div className="flex flex-col h-full p-4 col-span-2 rounded-xl overflow-y-auto">
+        <div className="grid grid-cols-12 gap-6 h-full p-6">
+          <div className="col-span-8 space-y-4">
             {cart.map((item, i) => (
               <ItemCart
                 {...item}
@@ -36,19 +36,21 @@ const Cart = () => {
               />
             ))}
           </div>
-          <div className="col-start-3 p-4 my-auto">
-            <h1 className="font-semibold text-md">Cart ({totalItems})</h1>{" "}
-            <p className="text-2xl pt-2">Total ${totalPrice.toFixed(2)}</p>
-            <button
-              onClick={clearAll}
-              className="font-semibold  w-full py-3 bg-[#3483fa] hover:bg-[#2968c8] transition duration-400 text-white rounded-md z-5 mt-4"
-            >
-              Clear cart
-            </button>
-            <div className="mt-4">
-              <Link to="/" className="">
-                <button className="font-semibold w-full py-3 bg-[#e3edfb] hover:bg-[#e3edea] transition duration-400 text-[#3483fa] rounded-md z-5">
-                  Continue shopping
+          <div className="col-span-4 p-4">
+            <div className="bg-gray-100 rounded-md p-4 space-y-4">
+              <h1 className="font-bold text-lg">Cart ({totalItems})</h1>
+              <p className="text-2xl pt-2 font-bold">
+                ${totalPrice.toFixed(2)}
+              </p>
+              <button
+                onClick={clearAll}
+                className="bg-red-500 hover:bg-red-600 text-white rounded-md py-3 w-full font-semibold transition duration-400"
+              >
+                Clear Cart
+              </button>
+              <Link to="/">
+                <button className="bg-gray-200 hover:bg-gray-300 text-blue-500 rounded-md py-3 w-full font-semibold transition duration-400">
+                  Continue Shopping
                 </button>
               </Link>
             </div>
@@ -56,17 +58,15 @@ const Cart = () => {
         </div>
       ) : (
         <div className="flex flex-col items-center m-10 h-96">
-          <h3 className="text-center mx-auto font-bold text-2xl">
+          <h3 className="text-center mx-auto font-bold text-2xl mb-4">
             Your cart is empty
           </h3>
-          <div className="py-5">
-            <Link
-              to="/"
-              className="bg-[#3483fa] hover:bg-[#2968c8] text-white px-5 py-2 rounded font-semibold h-11 w-26"
-            >
-              Go shop now
-            </Link>
-          </div>
+          <Link
+            to="/"
+            className="bg-blue-500 hover:bg-blue-600 text-white rounded-md py-3 px-6 font-semibold transition duration-400"
+          >
+            Go Shop Now
+          </Link>
         </div>
       )}
     </div>
