@@ -25,8 +25,8 @@ const Cart = () => {
   return (
     <div className="bg-white h-full">
       {cart.length !== 0 ? (
-        <div className="grid grid-cols-12 gap-6 h-full p-6">
-          <div className="col-span-8 space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 p-6">
+          <div className="md:col-span-8 space-y-4">
             {cart.map((item, i) => (
               <ItemCart
                 {...item}
@@ -36,7 +36,7 @@ const Cart = () => {
               />
             ))}
           </div>
-          <div className="col-span-4 p-4">
+          <div className="md:col-span-4 p-4">
             <div className="bg-gray-100 rounded-md p-4 space-y-4">
               <h1 className="font-bold text-lg">Cart ({totalItems})</h1>
               <p className="text-2xl pt-2 font-bold">
