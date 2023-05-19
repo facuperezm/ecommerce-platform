@@ -49,7 +49,7 @@ const Cart = () => {
                 Clear Cart
               </button>
               <Link to="/">
-                <button className="bg-gray-200 hover:bg-gray-300 text-blue-500 rounded-md py-3 w-full font-semibold transition duration-400">
+                <button className="bg-gray-200 hover:bg-gray-300 text-blue-500 rounded-md py-3 w-full font-semibold transition duration-400 mt-2">
                   Continue Shopping
                 </button>
               </Link>

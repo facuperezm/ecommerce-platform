@@ -23,7 +23,7 @@ const ShowProductItem = ({ data }) => {
         <div className="p-4 max-w-md border mx-auto rounded-md flex flex-col justify-between">
           <div>
             <h4 className="capitalize text-gray-500 text-sm">
-              {category} | Sold 344
+              {category} | Sold {Math.floor(Math.random() * 1000)}
             </h4>
 
             <h1 className="text-2xl font-semibold mt-2">{title}</h1>
